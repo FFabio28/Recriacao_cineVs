@@ -1,0 +1,221 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.logo span { color: #00aaff; }
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a.active, nav a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 18px;
+    border-radius: 20px;
+}
+
+/* Hero Section - Onde fica a imagem do Mario */
+.hero {
+    position: relative;
+    height: 85vh; /* Altura proporcional */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    background-image: url('img/supermario.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Película de sombra para dar leitura ao texto */
+.hero {
+    position: relative;
+    height: 80vh; /* Altura ideal para telas de PC */
+    width: 100%;
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    padding: 0 8%; /* Aumentei o recuo lateral para o texto não colar no canto */
+    background-image: url('img/supermario.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px; /* Limita a largura do texto para não ocupar a tela toda */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento uniforme entre logo, info e botão */
+}
+
+.movie-logo {
+    width: 80%; /* Ajusta o tamanho do logo do filme */
+    max-width: 400px;
+    margin-bottom: 5px;
+}
+
+.movie-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap; /* Evita que o texto quebre de forma estranha em telas menores */
+}
+
+.imdb {
+    background: #f1c40f;
+    color: black;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.info {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #eee;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.btn-assistir {
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content; /* O botão só ocupa o espaço do texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-assistir:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Canais */
+.channels-section {
+    padding: 40px 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.channel-card {
+    aspect-ratio: 16 / 9; /* Mantém o formato retangular de TV */
+    height: auto; /* Deixa o aspect-ratio controlar a altura */
+    background: #1a1a1a;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #333;
+    padding: 15px; /* Espaço interno para o logo não tocar nas bordas */
+}
+
+.channel-card img {
+    max-width: 100%;
+    max-height: 80%;
+    object-fit: contain; /* Garante que o logo não estique */
+}
+
+.channel-card:hover {
+    transform: translateY(-5px);
+    border-color: #00aaff;
+}
+
+.live-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff0000;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Dots do Carrossel */
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active { background: white; width: 25px; border-radius: 10px; }
